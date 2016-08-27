@@ -7,17 +7,28 @@
 
     <div class="panel-body">
         <form:form class="form" modelAttribute="disruptionForm" role="form">
+            <div class='col-md-5'>
+                <div class="form-group">
 
-            <div class="form-group">
-                <form:label path="startdate">Start Date</form:label>
-                <form:input path="startdate" class="form-control" placeholder="1/1/2016" />
-                <form:errors cssClass="error" path="startdate"></form:errors>
+                    <form:select path="severity" class="form-control">
+                        <form:option value="All">All</form:option>
+                        <form:option value="Minimal">Minimal</form:option>
+                        <form:option value="Moderate">Moderate</form:option>
+                        <form:option value="Severe">Severe</form:option>
+                    </form:select>
+                </div>
             </div>
 
-            <div class="form-group">
-                <form:label path="enddate">End Date</form:label>
-                <form:input path="enddate" class="form-control" placeholder="2/1/2016" />
-                <form:errors cssClass="error" path="enddate"></form:errors>
+            <div class='col-md-5'>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <form:input path="enddate" type='text' class="form-control" placeholder="Date (Default:Today)" id="enddate" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+
+                </div>
             </div>
 
             <div>
@@ -28,5 +39,11 @@
         </form:form>
     </div>
 </div>
-
 <%@include file="include/footer.jsp" %>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+                format: 'YYYY-MM-DD'
+        });
+    });
+</script>

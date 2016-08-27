@@ -14,14 +14,10 @@ import java.util.Date;
 @Table("disruption")
 public class Disruption {
 
-	@PrimaryKeyColumn(name = "id", type= PrimaryKeyType.PARTITIONED, ordinal = 0)
 	private String id;
 
 	@Column("start_date_time")
 	private Date startdate;
-
-	@Column("end_date_time")
-	private Date enddate;
 
 	@Column("latitude")
 	private float latitude;
@@ -29,8 +25,13 @@ public class Disruption {
 	@Column("longitude")
 	private float longitude;
 
+	@PrimaryKeyColumn(name = "severity", type= PrimaryKeyType.PARTITIONED, ordinal = 0)
 	@Column("severity")
 	private String severity;
+
+	@PrimaryKeyColumn(name = "end_date_time", type= PrimaryKeyType.PARTITIONED, ordinal = 1)
+	@Column("end_date_time")
+	private Date enddate;
 
 	public Disruption(String id, Date startdate, Date enddate, float latitude, float longitude, String severity) {
 		this.id = id;

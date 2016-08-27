@@ -13,6 +13,7 @@
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Transport for London</title>
@@ -30,7 +31,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/home">Transport for London</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/">Transport for London</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         </div><!--/.nav-collapse -->

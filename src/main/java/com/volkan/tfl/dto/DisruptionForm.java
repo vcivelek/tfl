@@ -10,12 +10,12 @@ import javax.validation.constraints.Size;
 public class DisruptionForm {
 
 	@NotEmpty
-	private String startdate;
+	private String severity;
 	@NotEmpty
 	private String enddate;
-
-	public DisruptionForm(String startdate, String enddate) {
-		this.startdate = startdate;
+	
+	public DisruptionForm(String severity, String enddate) {
+		this.severity = severity;
 		this.enddate = enddate;
 	}
 
@@ -23,12 +23,12 @@ public class DisruptionForm {
 		super();
 	}
 
-	public String getStartdate() {
-		return startdate;
+	public String getSeverity() {
+		return severity;
 	}
 
-	public void setStartdate(String startdate) {
-		this.startdate = startdate;
+	public void setSeverity(String severity) {
+		this.severity = severity;
 	}
 
 	public String getEnddate() {
@@ -41,7 +41,7 @@ public class DisruptionForm {
 
 	@Override public String toString() {
 		return "DisruptionForm{" +
-				"startdate='" + startdate + '\'' +
+				"severity='" + severity + '\'' +
 				", enddate='" + enddate + '\'' +
 				'}';
 	}
@@ -54,14 +54,14 @@ public class DisruptionForm {
 
 		DisruptionForm that = (DisruptionForm) o;
 
-		if (startdate != null ? !startdate.equals(that.startdate) : that.startdate != null)
+		if (severity != null ? !severity.equals(that.severity) : that.severity != null)
 			return false;
 		return !(enddate != null ? !enddate.equals(that.enddate) : that.enddate != null);
 
 	}
 
 	@Override public int hashCode() {
-		int result = startdate != null ? startdate.hashCode() : 0;
+		int result = severity != null ? severity.hashCode() : 0;
 		result = 31 * result + (enddate != null ? enddate.hashCode() : 0);
 		return result;
 	}

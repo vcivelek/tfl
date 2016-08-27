@@ -34,10 +34,13 @@ public class DisruptionController {
 			return "disruption";
 		logger.info(disruptionForm.toString());
 
+		redirectAttributes.addAttribute("severity", disruptionForm.getSeverity());
+		redirectAttributes.addAttribute("enddate", disruptionForm.getEnddate());
+
 		redirectAttributes.addFlashAttribute("flashType", "success");
 		redirectAttributes.addFlashAttribute("flashMessage", "Here is the disruption map below for the selected dates...");
 
-		return "redirect:/home";
+		return "redirect:/roads/disruptionmap";
 	}
 
 }
